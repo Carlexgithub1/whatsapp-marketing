@@ -1,0 +1,9 @@
+<%- include("partials/__header", { title }) %>
+
+<% if(pagename){%>
+    <%- include("Pages/" + pagename) %>
+<% } %>
+
+    <% include("Pages/homepage") %>
+
+<%- include("Partials/__footer") %>
