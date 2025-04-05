@@ -1,1 +1,0 @@
-export const RenderHomepage = require("./RenderHomepage");

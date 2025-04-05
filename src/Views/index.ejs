@@ -1,9 +1,15 @@
-<%- include("partials/__header", { title }) %>
+<%- include("partials/__header", { pagename, title }) %>
 
-<% if(pagename){%>
-    <%- include("Pages/" + pagename) %>
-<% } %>
+<div class="container">
 
-    <% include("Pages/homepage") %>
+    <% if(pagename){%>
+        <%- include("Pages/" + pagename) %>
+    <% } else { %>
+        <% include("Pages/homepage") %>
+    <% } %>
+    
+    <%- include("Components/Footer") %>
+
+</div>
 
 <%- include("Partials/__footer") %>

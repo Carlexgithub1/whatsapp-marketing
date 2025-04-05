@@ -1,13 +1,13 @@
 const express = require("express");
 const path = require("path");
-const HomeRoute = require("./HomeRoute.js");
-const WhatsappRoute = require("./WhatsappRoute.js");
+const HomeRoutes = require("./HomeRoutes");
+const WhatsappRoutes = require("./WhatsappRoutes");
 
 function route(app) {
     app.use("/public", express.static(path.join(__dirname, "../Public")));
 
-    app.use("/", HomeRoute);
-    app.use("/whatsapp", WhatsappRoute);
+    app.use("/", HomeRoutes);
+    app.use("/whatsapp", WhatsappRoutes);
 }
 
 module.exports = { route: route };

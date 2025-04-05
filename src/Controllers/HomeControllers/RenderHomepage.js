@@ -1,10 +1,10 @@
 export function RenderHomepage(req, res) {
 
     const data = {
-        pagename: "homepage",
+        pagename: "Homepage",
         title: "Welcome"
     }
-    
+
     res.render("index", data)
-    
+
 }
