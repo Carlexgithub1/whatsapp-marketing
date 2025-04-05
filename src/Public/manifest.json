@@ -1,0 +1,12 @@
+{
+    "name": "Whatsapp Manager App",
+    "short_name": "WMA",
+    "theme_color": "#0066ff",
+    "start_url": "/",
+    "icons": [
+        {
+            "src": "/public/icons/logo-ico-rvb.svg",
+            "sizes": "72x72"
+        }
+    ]
+}
