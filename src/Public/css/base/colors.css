@@ -1,0 +1,6 @@
+*{
+    --color-black:hsl(0, 0%, 5%);
+    --color-white:hsl(0, 0%, 95%);
+    --color-accent:hsl(216, 100%, 50%);
+    --color-grey-50:hsl(0, 0%, 50%);
+}

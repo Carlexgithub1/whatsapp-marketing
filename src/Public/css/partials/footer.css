@@ -1,0 +1,26 @@
+*{
+    --footer-color-base: hsl(0, 0%, 10%);
+}
+
+.footer{
+    height: 100px;
+    margin-top: auto;
+    background-color: var(--footer-color-base);
+}
+
+.footer .wrapper{
+    padding-top: 2rem; 
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+    color: var(--text-color-white);    
+}
+
+.footer-logo{
+    margin-right: auto;
+}
+
+.footer-logo img {
+    height: 1.5rem;
+}

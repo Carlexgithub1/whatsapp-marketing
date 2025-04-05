@@ -1,0 +1,25 @@
+*{
+    --button-color-black: var(--color-black);
+    --button-color-white: var(--color-white);
+    --button-color-accent: var(--color-accent);
+}
+
+button {
+    background-color: none;
+    border: 1px solid var(--button-color-black);
+    border-radius: .5rem;
+    color: var(--button-color-black);
+    padding: .8rem 1.5rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--button-color-black);
+    color: var(--button-color-white);
+}
+
+button.cta{
+    border-color: var(--button-color-accent);
+    background-color: var(--button-color-accent);
+    color: var(--button-color-white);
+}

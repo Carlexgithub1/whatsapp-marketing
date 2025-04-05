@@ -1,0 +1,5 @@
+*{
+    --text-color-black:var(--color-black);
+    --text-color-white:var(--color-white);
+    --text-color-accent:var(--color-accent);
+}
