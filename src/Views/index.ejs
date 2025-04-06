@@ -1,6 +1,7 @@
 <%- include("Partials/__header", { pagename, title }) %>
 
 <div class="container">
+    <%- include('Components/Header') %>
 
     <% if(pagename){%>
         <%- include("Pages/" + pagename) %>
