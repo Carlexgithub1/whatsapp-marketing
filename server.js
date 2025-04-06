@@ -8,11 +8,7 @@ const server = app.listen(PORT, () => {
     console.log(`App listening on http://localhost:${PORT}`);
 })
 
-const io = require("socket.io")(server);
-
-io.on("connection", (socket) => {
-    console.log(socket.id);
-})
+require("./socketio").init(server);
 
 app.set("view engine", "ejs");
 app.set("views", "./src/Views");
