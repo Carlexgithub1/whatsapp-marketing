@@ -1,4 +1,4 @@
-export function RenderHomepage(req, res) {
+module.exports.RenderHomepage = function RenderHomepage(req, res) {
 
     const data = {
         pagename: "Homepage",

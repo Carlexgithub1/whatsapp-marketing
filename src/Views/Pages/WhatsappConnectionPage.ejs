@@ -1,1 +1,94 @@
-<h1>Whatsapp Connection Page</h1>
+<section class="main">
+    <div class="wrapper">
+        <div class="qrcontainer">
+            <p class="qrcontainer-text">Scanner le code pour connecter votre compte whatsapp</p>
+            <canvas class="qrcontainer-code" id="qrcodecanvas" width="200px" height="200px"></canvas>
+            <img id="qrcodeimg" src="#" alt="whatsapp connection qrcode">
+            <div id="qrcodediv"></div>
+            <button class="btn" id="generateqr">Generate QR Code</button>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode/1.4.4/qrcode.js"
+    integrity="sha512-oxrVyBhqnzQ0BzuM0A/6dEIk0alz0p4SpDRaWvtuUoarIc8rnL5lVniHG5Dp21MRFojcQcmKHjaskNXhSaUPPw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+
+<script>
+    async function UpdateQRCode() {
+        const qr = await GetQRCode();
+        await QRCode.toCanvas(canvas, qr, function (error) {
+            if (error) console.error(error)
+            console.log('success!');
+        });
+
+        // const qrcode = await QRCode.toDataURL(qr);
+        // img.src = qrcode;
+    }
+
+    async function GetQRCode() {
+        const response = await axios.get("/whatsapp/getqrcode");
+        const qr = response.data.qr;
+        return qr;
+    }
+
+</script>
+
+<script>
+    const canvas = document.getElementById("qrcodecanvas");
+    const img = document.getElementById("qrcodeimg");
+    const div = document.getElementById("qrcodediv");
+    const btn = document.getElementById("generateqr");
+
+    // btn.addEventListener("click", function (event) {
+    //     event.preventDefault();
+    //     UpdateQRCode();
+    // })
+
+    const socket = io();
+    socket.on("connect", function () {
+        console.log("Connected to server");
+    });
+
+    socket.on("new-qr-code", async function (qr) {
+        const qrcode = GetStyledQRCode(qr);
+        qrcode.append(div);
+    });
+
+    // Generate QR Code when button is clicked
+    btn.addEventListener("click", async function (event) {
+        event.preventDefault();
+        const qr = await GetQRCode();
+        const qrcode = GetStyledQRCode(qr);
+        qrcode.append(div);
+    })
+
+    // Add styling for QR Code
+    function GetStyledQRCode(qr) {
+
+        const qrCode = new QRCodeStyling({
+            width: 300,
+            height: 300,
+            data: qr,
+            image: "/public/icons/logo-ico-rvb.svg", // URL de l'icône au centre
+            dotsOptions: {
+                color: "#0066ff", // Couleur des points
+                type: "rounded", // Style des points
+            },
+            // backgroundOptions: {
+            // color: "#FFFFFF" // Couleur d'arrière-plan
+            // },
+            imageOptions: {
+                crossOrigin: "anonymous",
+                width: 60, // Taille de l'icône
+                height: 60
+            }
+        });
+
+        return qrCode;
+    }
+
+</script>

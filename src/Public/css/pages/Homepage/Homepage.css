@@ -2,9 +2,13 @@ body {
     background-image: linear-gradient(45deg, );
 }
 
-.main .wrapper{
+.header {
+    display: none;
+}
+
+.main .wrapper {
     max-width: 620px;
-    padding-top: 2rem;
+    padding-top: 5rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -12,34 +16,35 @@ body {
     text-align: left;
 }
 
-.logo{
-    height: 80px;
+.main .logo {
+    height: 6rem;
     margin-bottom: 2rem;
 }
 
-.title{
+.main .title {
     font-size: 3rem;
     line-height: 90%;
     margin-bottom: 1rem;
 }
 
-.title span{
+.main .title span {
     color: var(--text-color-accent);
 }
 
-.description {
+.main .description {
     font-weight: normal;
 }
 
-a.cta{
+.main a.cta {
     margin-top: 2rem;
 }
-a.cta:hover .btn{
+
+a.cta:hover .btn {
     background-color: var(--button-color-black);
     border-color: var(--button-color-black);
     color: var(--text-color-white);
 }
 
-.btn.cta{
+.main .btn.cta {
     font-size: large;
 }

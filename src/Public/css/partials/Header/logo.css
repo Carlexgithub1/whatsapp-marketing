@@ -1,0 +1,25 @@
+.header .logo {
+    margin-right: auto;
+}
+
+.header .logo img {
+    height: 100%;
+}
+
+.header-logo-comp {
+    display: block;
+}
+
+.header-logo-ico {
+    display: none;
+}
+
+@media screen and (max-width: 42rem) {
+    .header-logo-comp {
+        display: none;
+    }
+
+    .header-logo-ico {
+        display: block;
+    }
+}

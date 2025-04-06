@@ -1,0 +1,9 @@
+.header a.cta {
+    margin-left: 1rem;
+}
+
+.header a.cta .btn.cta {
+    height: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+}

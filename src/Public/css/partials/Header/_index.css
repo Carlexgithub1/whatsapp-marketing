@@ -1,0 +1,32 @@
+@import url("./logo.css");
+@import url("./menu.css");
+@import url("./cta.css");
+
+.header {
+    --height: 2rem;
+    --element-height: 2rem;
+}
+
+@media screen and (max-width: 42rem) {
+    .header {
+        --height: 3rem;
+    }
+}
+
+.header:hover {
+    background-color: hsla(216, 50%, 97%, 50%);
+}
+
+/* WRAPPER */
+.header .wrapper {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    height: var(--height);
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+}
